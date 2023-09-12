@@ -54,5 +54,10 @@ namespace SchoolDashboard.Service.Concrete
         {
             return lectureRepository.GetAllStudentsForLecture(id);
         }
+
+        public void UpdateLectureByName(string lectureName,Lecture newLecture)
+        {
+            lectureRepository.UpdateLectureByName(lectureName,newLecture);
+        }
     }
 }

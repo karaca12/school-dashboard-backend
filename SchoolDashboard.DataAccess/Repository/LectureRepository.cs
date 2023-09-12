@@ -97,5 +97,13 @@ namespace SchoolDashboard.DataAccess.Repository
                 .ToList();
             return users.Where(u=>u.UserRole=="Student").ToList();
         }
+
+        public void UpdateLectureByName(string lectureName,Lecture newLecture)
+        {
+            var lecture = schoolDbContext.Lectures.SingleOrDefault(l => l.LectureName == lectureName);
+            lecture.LectureName = newLecture.LectureName;
+            lecture.LectureDescription = newLecture.LectureDescription;
+            schoolDbContext.SaveChanges();
+        }
     }
 }

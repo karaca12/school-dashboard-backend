@@ -15,5 +15,6 @@ namespace SchoolDashboard.Service.Abstract
         List<User> GetAllUsersFromId(int id);
         void DeleteLectureByName(string lectureName);
         List<User> GetAllStudentsForLecture(int id);
+        void UpdateLectureByName(string lectureName,Lecture newLecture);
     }
 }

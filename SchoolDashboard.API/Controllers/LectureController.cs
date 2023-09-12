@@ -68,6 +68,11 @@ namespace SchoolDashboard.API.Controllers
         {
             return lectureService.GetAllStudentsForLecture(id);
         }
-
+        [HttpPut("updateByName/{lectureName}")]
+        public IActionResult UpdateLectureByName(string lectureName,[FromBody] Lecture newLecture)
+        {
+            lectureService.UpdateLectureByName(lectureName,newLecture);
+            return Ok("Updated");
+        }
     }
 }
